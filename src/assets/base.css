@@ -1,0 +1,42 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --color-text: #ffffff;
+  --color-background: #181818;
+  --color-border: orange;
+  --color-input: #e5e7e99c;
+  --color-caret: orange;
+  --color-selection: orange;
+  --color-success-button-bg: #42b883;
+  --color-success-button-bg-hover: #64bd95;
+  --color-success-button-bg-active: #42b883;
+  --color-button-bg-disabled: #697570;
+  --color-danger-button-bg: #b30d0d;
+  --color-danger-button-bg-hover: #e40d0d;
+  --color-header-text: #07f88c;
+  --color-strikeout: #b8c2cc;
+  --color-priority-text: orange;
+  --color-scrollbar-thumb: #07f88c;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
