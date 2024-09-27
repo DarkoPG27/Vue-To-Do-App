@@ -75,11 +75,11 @@ input:focus {
   background-color: var(--color-danger-button-bg);
   border: none;
   border-radius: 0.3rem;
-  width: 70px;
+  min-width: 70px;
+  height: 17px;
   margin: 0.2rem;
   color: var(--color-text);
   text-transform: uppercase;
-  z-index: 99;
 }
 
 .delete_btn:hover {
@@ -98,16 +98,32 @@ input:focus {
 }
 
 .item_from_list {
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(92, 92, 92);
+  padding: 0.2rem;
+}
+
+.item_from_list:hover {
+  background-color: rgba(158, 158, 158, 0.413);
+  border-radius: 0.3rem;
+}
+
+.item_text {
+  word-break: break-all;
+  width: 60%;
 }
 
 .list_options {
-  width: 40%;
+  display: flex;
+}
+
+.labels {
   display: flex;
   flex-direction: column;
-  padding-left: 1rem;
+  padding-right: 0.5rem;
 }
 
 .header h1 {
@@ -150,4 +166,60 @@ input:focus {
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  .header {
+    justify-content: center;
+  }
+
+  .add_item_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .add_item_btn {
+    width: 130px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .list_options {
+    width: 100%;
+    padding-top: 1rem;
+    flex-direction: row;
+  }
+
+  .labels {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input_todo {
+    width: 100%;
+  }
+
+  .item_from_list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 1rem;
+  }
 }

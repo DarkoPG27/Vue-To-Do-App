@@ -49,37 +49,43 @@ const togglePurchased = (item) => {
       <h1>{{ header }}</h1>
     </div>
 
-    <form class="add_item_form" @submit.prevent="saveItem">
-      <input
-        v-model="newItem"
-        type="text"
-        placeholder="Add todo"
-        class="input_todo"
-      />
+    <form @submit.prevent="saveItem">
+      <div class="add_item_form">
+        <input
+          v-model="newItem"
+          type="text"
+          placeholder="Add todo"
+          class="input_todo"
+        />
 
-      <div class="list_options">
-        <Label>
-          <input
-            :disabled="newItem.length < 5"
-            type="checkbox"
-            v-model="newItemHighPriority"
-          />
-          HighPriority
-        </Label>
-        <Label>
-          <input type="checkbox" v-model="toDo" />
-          Only To Do
-        </Label>
+        <div class="list_options">
+          <div class="labels">
+            <Label>
+              <input
+                :disabled="newItem.length < 5"
+                type="checkbox"
+                v-model="newItemHighPriority"
+              />
+              HighPriority
+            </Label>
+            <Label>
+              <input type="checkbox" v-model="toDo" />
+              Only To Do
+            </Label>
+          </div>
+          <div class="button_div">
+            <button :disabled="newItem.length < 5" class="add_item_btn">
+              Add Item
+            </button>
+          </div>
+        </div>
       </div>
-
-      <button :disabled="newItem.length < 5" class="add_item_btn">
-        Add Item
-      </button>
     </form>
 
     <ul v-show="!toDo" class="scrollable_list">
       <li v-for="item in reversedItems" :key="item.id" class="item_from_list">
         <span
+          class="item_text"
           :class="{ strikeout: item.purchased, priority: item.highPriority }"
           @click="togglePurchased(item)"
           >{{ item.label }}</span
